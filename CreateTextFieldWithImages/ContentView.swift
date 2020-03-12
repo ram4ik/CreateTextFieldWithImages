@@ -9,8 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var username = ""
     var body: some View {
-        Text("Hello, World!")
+        HStack {
+            HStack {
+                Image(systemName: "person")
+                    .foregroundColor(.gray)
+                TextField("Username", text: $username)
+            }.padding()
+            .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.gray, lineWidth: 1))
+        }.padding(20)
     }
 }
 
